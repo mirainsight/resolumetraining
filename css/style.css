@@ -322,6 +322,40 @@ section.topic ul, section.topic li { line-height: 1.7; }
 
 .callout-body p, .callout-body li { color: var(--text); font-size: 0.96rem; }
 
+/* ---------- media placeholder (screenshot/gif slots to be filled in) ---------- */
+.media-placeholder {
+  margin: 1.2rem 0 1.6rem;
+}
+
+.media-placeholder .frame {
+  border: 1px dashed var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-raised);
+  aspect-ratio: 16 / 9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  color: var(--text-faint);
+  text-align: center;
+  padding: 1rem 1.5rem;
+}
+
+.media-placeholder .frame .icon { font-size: 1.7rem; }
+
+.media-placeholder .frame strong {
+  color: var(--text-dim);
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.media-placeholder .frame span.desc {
+  font-size: 0.88rem;
+  max-width: 420px;
+}
+
 /* ---------- "coming soon" placeholder cards (Chapter 3) ---------- */
 .placeholder-card {
   border: 1px dashed var(--border);

@@ -42,8 +42,8 @@
     <h1>How is Resolume?</h1>
     <p class="chapter-intro">
       The core workflow — inputs, layers, and the everyday adjustments you'll make live.
-      Orange callouts mark places where there's more going on under the hood; expand them
-      when you're ready, skip them for now if you're not.
+      For the deeper hardware and patching details, see
+      <a href="advanced.html">Chapter ③ — Advanced</a>.
     </p>
 
     <section class="topic" id="propresenter-bridge">
@@ -57,34 +57,31 @@
         camera feed, videos, and images. Think of it as the layer that sits around and
         underneath what ProPresenter already produces.
       </p>
+
+      <figure class="media-placeholder">
+        <div class="frame">
+          <span class="icon">🖼</span>
+          <strong>Screenshot needed</strong>
+          <span class="desc">ProPresenter's Live output appearing as a source thumbnail in Resolume's input list</span>
+        </div>
+      </figure>
     </section>
 
     <section class="topic" id="sdi-vs-ndi">
       <h2>SDI vs NDI</h2>
       <p>
         Both are ways of getting video signal from one place to another. Which one a room
-        uses depends on what that room is set up for.
+        uses depends on what that room is set up for — see
+        <a href="advanced.html#sdi-vs-ndi">Chapter ③</a> for the hardware deep dive.
       </p>
 
-      <div class="callout advanced">
-        <button class="callout-toggle" type="button">
-          SDI vs NDI — the hardware reality
-          <span class="chevron">▾</span>
-        </button>
-        <div class="callout-body">
-          <p>
-            <strong>SDI</strong> is a physical connection — a cable. It's stable and
-            predictable, but it requires hardware (cabling, converters, a proper run between
-            rooms). The main sanctuary uses SDI for this reliability.
-          </p>
-          <p>
-            <strong>NDI</strong> is virtual — it travels over the network instead of a
-            dedicated cable. That makes it flexible (no new cable run needed, easy to add a
-            source), but it can be unstable if the network isn't set up cleanly for it.
-            Sanctuary 2 uses NDI for this flexibility.
-          </p>
+      <figure class="media-placeholder">
+        <div class="frame">
+          <span class="icon">🖼</span>
+          <strong>Screenshot needed</strong>
+          <span class="desc">Resolume's Sources panel showing an SDI input next to an NDI input</span>
         </div>
-      </div>
+      </figure>
     </section>
 
     <section class="topic" id="layering">
@@ -99,6 +96,14 @@
         <li><strong>Composition vs. Group vs. Layer</strong> — a Composition is the whole stack sent to the screen; a Group bundles a few layers together so they can be moved, faded, or triggered as one unit; a Layer is the individual row playing a single clip at a time.</li>
         <li><strong>Opacity</strong> — how much of a layer shows through the one(s) below it (more in Customizations).</li>
       </ul>
+
+      <figure class="media-placeholder">
+        <div class="frame">
+          <span class="icon">🖼</span>
+          <strong>Screenshot needed</strong>
+          <span class="desc">Resolume's composition grid: layers (rows) stacked top-to-bottom over columns</span>
+        </div>
+      </figure>
     </section>
 
     <section class="topic" id="slicing">
@@ -109,36 +114,17 @@
       </p>
       <p>
         It can also resize: a 720×1080 source can be stretched or fit to 1920×1080, at the
-        cost of some resolution.
+        cost of some resolution. See <a href="advanced.html#slicing">Chapter ③</a> for
+        advanced output patching and using ProPresenter's Live Feed as an input.
       </p>
 
-      <div class="callout advanced">
-        <button class="callout-toggle" type="button">
-          Output + Patching — advanced output &amp; scaling
-          <span class="chevron">▾</span>
-        </button>
-        <div class="callout-body">
-          <p>
-            Beyond simple resizing, Resolume's Advanced Output screen lets you patch and
-            scale your composition onto specific physical outputs — useful once you're
-            feeding more than one screen or a non-standard resolution.
-          </p>
+      <figure class="media-placeholder">
+        <div class="frame">
+          <span class="icon">🎞</span>
+          <strong>GIF needed</strong>
+          <span class="desc">Cropping a camera feed to show only the left half, then resizing a 720×1080 source to fill 1920×1080</span>
         </div>
-      </div>
-
-      <div class="callout advanced">
-        <button class="callout-toggle" type="button">
-          ProPresenter as an input
-          <span class="chevron">▾</span>
-        </button>
-        <div class="callout-body">
-          <p>
-            ProPresenter's live output (its "Live Feed") is, from Resolume's perspective,
-            just another input — one that can be triggered, layered, and customized exactly
-            like a video clip or camera feed.
-          </p>
-        </div>
-      </div>
+      </figure>
     </section>
 
     <section class="topic" id="customizations">
@@ -152,6 +138,14 @@
         <li><strong>Playback options</strong> — loop, bounce, hold, etc.</li>
         <li>...and a long list of other effects beyond this.</li>
       </ul>
+
+      <figure class="media-placeholder">
+        <div class="frame">
+          <span class="icon">🖼</span>
+          <strong>Screenshot needed</strong>
+          <span class="desc">A clip's parameter panel: speed, color, opacity, and transform controls</span>
+        </div>
+      </figure>
     </section>
 
     <section class="topic" id="shortcuts">
@@ -161,18 +155,34 @@
         menu mid-service — including via <strong>MIDI</strong>, if you want a physical
         controller mapped to specific adjustments.
       </p>
+
+      <figure class="media-placeholder">
+        <div class="frame">
+          <span class="icon">🖼</span>
+          <strong>Screenshot needed</strong>
+          <span class="desc">Mapping a MIDI fader to a layer's opacity in Resolume's MIDI/Keystroke setup</span>
+        </div>
+      </figure>
     </section>
 
     <section class="topic" id="optimization">
       <h2>Optimization</h2>
       <p>
-        Heavy video files can strain playback. Transcoding clips into a more
-        playback-friendly format/codec ahead of time keeps things smooth live.
+        Heavy video files can strain playback and cause lag. Transcoding clips into a more
+        playback-friendly format ahead of time keeps things smooth live.
       </p>
-      <div class="open-question">
-        <strong>Open question:</strong> which codec we standardize on for transcoding
-        (commonly HAP for Resolume) — to be confirmed and filled in here.
-      </div>
+      <p>
+        Use <strong>Resolume Alley</strong> (Resolume's own transcoder) to convert clips
+        before they go into a composition — this is the step that avoids lagginess.
+      </p>
+
+      <figure class="media-placeholder">
+        <div class="frame">
+          <span class="icon">🎞</span>
+          <strong>GIF needed</strong>
+          <span class="desc">Transcoding a clip in Resolume Alley before importing it into a composition</span>
+        </div>
+      </figure>
     </section>
 
     <p><a href="advanced.html">Continue to Chapter ③ — Advanced →</a></p>
