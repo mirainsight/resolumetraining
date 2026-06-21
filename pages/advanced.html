@@ -31,7 +31,6 @@
       <li><a href="#sdi-vs-ndi">SDI vs NDI</a></li>
       <li><a href="#layering">Layering</a></li>
       <li><a href="#slicing">Slicing</a></li>
-      <li><a href="#customizations">Customizations</a></li>
       <li><a href="#shortcuts">Shortcuts</a></li>
       <li><a href="#optimization">Optimization</a></li>
     </ul>
@@ -56,25 +55,34 @@
 
     <section class="topic" id="sdi-vs-ndi">
       <h2>SDI vs NDI</h2>
-      <p>
-        <strong>SDI</strong> is a physical connection — a cable. It's stable and
-        predictable, but it requires hardware (cabling, converters, a proper run between
-        rooms). The main sanctuary uses SDI for this reliability.
-      </p>
-      <p>
-        <strong>NDI</strong> is virtual — it travels over the network instead of a
-        dedicated cable. That makes it flexible (no new cable run needed, easy to add a
-        source), but it can be unstable if the network isn't set up cleanly for it.
-        Sanctuary 2 uses NDI for this flexibility.
-      </p>
 
-      <figure class="media-placeholder">
-        <div class="frame">
-          <span class="icon">🖼</span>
-          <strong>Screenshot/diagram needed</strong>
-          <span class="desc">Signal path comparison: SDI cable run to the main sanctuary booth vs NDI over the network to Sanctuary 2</span>
+      <div class="callout advanced">
+        <button class="callout-toggle" type="button">
+          SDI vs NDI — the hardware reality
+          <span class="chevron">▾</span>
+        </button>
+        <div class="callout-body">
+          <p>
+            <strong>SDI</strong> is a physical connection — a cable. It's stable and
+            predictable, but it requires hardware (cabling, converters, a proper run between
+            rooms). The main sanctuary uses SDI for this reliability.
+          </p>
+          <p>
+            <strong>NDI</strong> is virtual — it travels over the network instead of a
+            dedicated cable. That makes it flexible (no new cable run needed, easy to add a
+            source), but it can be unstable if the network isn't set up cleanly for it.
+            Sanctuary 2 uses NDI for this flexibility.
+          </p>
+
+          <figure class="media-placeholder">
+            <div class="frame">
+              <span class="icon">🖼</span>
+              <strong>Screenshot/diagram needed</strong>
+              <span class="desc">Signal path comparison: SDI cable run to the main sanctuary booth vs NDI over the network to Sanctuary 2</span>
+            </div>
+          </figure>
         </div>
-      </figure>
+      </div>
     </section>
 
     <section class="topic" id="layering">
@@ -87,31 +95,54 @@
 
     <section class="topic" id="slicing">
       <h2>Slicing</h2>
-      <p>
-        Beyond simple resizing, Resolume's Advanced Output screen lets you patch and
-        scale your composition onto specific physical outputs — useful once you're
-        feeding more than one screen or a non-standard resolution.
-      </p>
-      <p>
-        ProPresenter's live output (its "Live Feed") is, from Resolume's perspective,
-        just another input — one that can be triggered, layered, and customized exactly
-        like a video clip or camera feed.
-      </p>
 
-      <figure class="media-placeholder">
-        <div class="frame">
-          <span class="icon">🖼</span>
-          <strong>Screenshot needed</strong>
-          <span class="desc">Resolume's Advanced Output screen: patching a composition across multiple physical outputs</span>
+      <div class="callout advanced">
+        <button class="callout-toggle" type="button">
+          Output + Patching — advanced output &amp; scaling
+          <span class="chevron">▾</span>
+        </button>
+        <div class="callout-body">
+          <p>
+            Beyond simple resizing, Resolume's Advanced Output screen lets you patch and
+            scale your composition onto specific physical outputs — useful once you're
+            feeding more than one screen or a non-standard resolution.
+          </p>
         </div>
-      </figure>
-    </section>
+      </div>
 
-    <section class="topic" id="customizations">
-      <h2>Customizations</h2>
-      <div class="placeholder-card">
-        <span class="icon">○</span>
-        <span>Deeper effect chains and parameter automation — coming soon.</span>
+      <div class="callout advanced">
+        <button class="callout-toggle" type="button">
+          ProPresenter as an input
+          <span class="chevron">▾</span>
+        </button>
+        <div class="callout-body">
+          <p>
+            ProPresenter's live output (its "Live Feed") is, from Resolume's perspective,
+            just another input — one that can be triggered, layered, and customized exactly
+            like a video clip or camera feed.
+          </p>
+        </div>
+      </div>
+
+      <div class="callout advanced">
+        <button class="callout-toggle" type="button">
+          Slice stacking — multiple slices per screen
+          <span class="chevron">▾</span>
+        </button>
+        <div class="callout-body">
+          <p>
+            A screen isn't limited to one slice either. Think of the composition as a pie: each
+            slice carves out a region to send to a different output, at any size or shape, and
+            you can stack as many slices per screen as you need. See Resolume's
+            <a href="https://resolume.com/support/en/input-selection" target="_blank" rel="noopener">Input Selection guide</a>
+            for the full breakdown.
+          </p>
+
+          <figure class="media-shot">
+            <img src="../screenshots/resolume-slicestack.png" alt="Resolume's slice list: Screen 1 with Center Rotated, Horizontal Strip, and Vertical Strip slices; Screen 2 with Triangle and FullScreen slices" />
+            <figcaption>One screen, several slices: Screen 1 carries three, Screen 2 carries two, each its own shape.</figcaption>
+          </figure>
+        </div>
       </div>
     </section>
 

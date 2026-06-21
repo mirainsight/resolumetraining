@@ -356,6 +356,82 @@ section.topic ul, section.topic li { line-height: 1.7; }
   max-width: 420px;
 }
 
+/* ---------- video link card (links out to a hosted lesson; can't be iframed) ---------- */
+.video-embed {
+  display: block;
+  position: relative;
+  margin: 1.2rem 0 1.6rem;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.video-embed img {
+  display: block;
+  width: 100%;
+}
+
+.video-embed .play-badge {
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  right: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.6rem 0.9rem;
+  border-radius: var(--radius);
+  background: rgba(20, 23, 28, 0.82);
+  color: var(--text);
+  font-size: 0.88rem;
+}
+
+.video-embed .play-badge .play-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--bg);
+  font-size: 0.7rem;
+  flex-shrink: 0;
+}
+
+.video-embed:hover .play-badge { background: rgba(20, 23, 28, 0.95); }
+
+/* ---------- real screenshot figures ---------- */
+.media-shot {
+  margin: 1.2rem 0 1.6rem;
+}
+
+.media-shot img {
+  display: block;
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.media-shot figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.88rem;
+  color: var(--text-faint);
+}
+
+.media-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 1.2rem 0 1.6rem;
+}
+
+.media-grid .media-shot { margin: 0; }
+
+@media (max-width: 760px) {
+  .media-grid { grid-template-columns: 1fr; }
+}
+
 /* ---------- "coming soon" placeholder cards (Chapter 3) ---------- */
 .placeholder-card {
   border: 1px dashed var(--border);

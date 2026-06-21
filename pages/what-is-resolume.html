@@ -27,35 +27,51 @@
   <div>
     <div class="chapter-eyebrow">Chapter One</div>
     <h1>What is Resolume?</h1>
-    <p class="chapter-intro">
-      The short version, compared against the tool you already know.
-    </p>
 
     <section class="topic" id="optimized-for-video">
       <h2>Optimized for video</h2>
       <p>
         ProPresenter is built around presentation: lyrics, scripture, teleprompter text, stage
-        displays. Resolume is built around <strong>video</strong> — it's a tool for live
-        visuals, mixing, and projection, designed to play, layer, and manipulate moving
-        image in real time.
-      </p>
-      <p>
-        That difference in purpose is the reason the two tools feel different to operate,
-        even though both end up sending something to a screen on a Sunday. ProPresenter
-        thinks in slides and cues. Resolume thinks in layers, clips, and live inputs —
-        more like a video mixing desk than a presentation deck.
-      </p>
-      <p>
-        Chapter ② walks through what that actually looks like in practice, starting from
-        the ProPresenter habits you already have.
+        displays. Resolume is built around <strong>video</strong>: live visuals, mixing, and
+        projection in real time.
       </p>
 
-      <figure class="media-placeholder">
-        <div class="frame">
-          <span class="icon">🖼</span>
-          <strong>Screenshot needed</strong>
-          <span class="desc">Side-by-side: ProPresenter's slide/cue view next to Resolume's clip-and-layer grid</span>
-        </div>
+      <div class="media-grid">
+        <figure class="media-shot">
+          <img src="../screenshots/propresenter-stage.png" alt="ProPresenter layout with Current Slide Text, Next Slide Text, and timer objects" />
+          <figcaption>ProPresenter's strength: a clean teleprompter layout for current/next text and timers.</figcaption>
+        </figure>
+        <figure class="media-shot">
+          <img src="../screenshots/propresenter-reflow.jpeg" alt="ProPresenter's Reflow editor arranging lyrics into verses and choruses" />
+          <figcaption>...and Reflow, for arranging lyrics into verses and choruses before they hit a slide.</figcaption>
+        </figure>
+      </div>
+
+      <p>
+        ProPresenter thinks in slides and cues. Resolume thinks in layers, clips, and live
+        inputs, more like a video mixing desk than a presentation deck.
+      </p>
+
+      <div class="media-grid">
+        <figure class="media-shot">
+          <img src="../screenshots/resolume-overview.jpg" alt="Resolume Arena composition with multiple layers and columns of clips ready to trigger" />
+          <figcaption>Resolume's strength: layers and columns of clips, live and ready to trigger.</figcaption>
+        </figure>
+        <figure class="media-shot">
+          <img src="../screenshots/resolume-overview-deeperview.jpg" alt="Resolume Arena showing columns 1-8 across the top, Layer 3 down the side, and a clip's settings panel with blend mode, opacity, and transform" />
+          <figcaption>...and a settings panel per clip: blend mode, opacity, transform, all tweakable live.</figcaption>
+        </figure>
+      </div>
+
+      <p>
+        Put together, the two tools sit side by side in the signal chain: Resolume handles
+        slides, the live stream, and media, then hands text and a confidence monitor feed
+        back to ProPresenter over NDI for the teleprompter.
+      </p>
+
+      <figure class="media-shot">
+        <img src="../screenshots/InputOutput.png" alt="Diagram of AV signal flow showing Resolume taking in slides, live stream, and media, and exchanging NDI text/teleprompter feeds with ProPresenter, before going out to LED screens" />
+        <figcaption>How they connect: Resolume feeds the LED screens directly, while ProPresenter still drives the teleprompter over NDI.</figcaption>
       </figure>
     </section>
 

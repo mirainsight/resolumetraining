@@ -28,7 +28,6 @@
     <div class="toc-label">In this chapter</div>
     <ul>
       <li><a href="#propresenter-bridge">From ProPresenter</a></li>
-      <li><a href="#sdi-vs-ndi">SDI vs NDI</a></li>
       <li><a href="#layering">Layering</a></li>
       <li><a href="#slicing">Slicing</a></li>
       <li><a href="#customizations">Customizations</a></li>
@@ -58,30 +57,21 @@
         underneath what ProPresenter already produces.
       </p>
 
-      <figure class="media-placeholder">
-        <div class="frame">
-          <span class="icon">🖼</span>
-          <strong>Screenshot needed</strong>
-          <span class="desc">ProPresenter's Live output appearing as a source thumbnail in Resolume's input list</span>
-        </div>
+      <figure class="media-shot">
+        <img src="../screenshots/propresenter-ndioutput.png" alt="ProPresenter's Screen Configuration with the Output dropdown open, showing New NDI as an output option" />
+        <figcaption>What ProPresenter outputs: any screen can be sent out as a New NDI source.</figcaption>
       </figure>
-    </section>
 
-    <section class="topic" id="sdi-vs-ndi">
-      <h2>SDI vs NDI</h2>
-      <p>
-        Both are ways of getting video signal from one place to another. Which one a room
-        uses depends on what that room is set up for — see
-        <a href="advanced.html#sdi-vs-ndi">Chapter ③</a> for the hardware deep dive.
-      </p>
-
-      <figure class="media-placeholder">
-        <div class="frame">
-          <span class="icon">🖼</span>
-          <strong>Screenshot needed</strong>
-          <span class="desc">Resolume's Sources panel showing an SDI input next to an NDI input</span>
-        </div>
-      </figure>
+      <div class="media-grid">
+        <figure class="media-shot">
+          <img src="../screenshots/resolume-videosources.jpg" alt="Resolume's Sources panel with Wire Sources and Video Sources categories" />
+          <figcaption>In Resolume, NDI inputs show up in the Sources panel under Wire Sources.</figcaption>
+        </figure>
+        <figure class="media-shot">
+          <img src="../screenshots/resolume-ndi.jpg" alt="Two NDI sources from an Alienware machine appearing as live columns in Resolume" />
+          <figcaption>...and those ProPresenter screens arrive as live NDI columns, ready to drop into a composition.</figcaption>
+        </figure>
+      </div>
     </section>
 
     <section class="topic" id="layering">
@@ -97,13 +87,13 @@
         <li><strong>Opacity</strong> — how much of a layer shows through the one(s) below it (more in Customizations).</li>
       </ul>
 
-      <figure class="media-placeholder">
-        <div class="frame">
-          <span class="icon">🖼</span>
-          <strong>Screenshot needed</strong>
-          <span class="desc">Resolume's composition grid: layers (rows) stacked top-to-bottom over columns</span>
-        </div>
-      </figure>
+      <a class="video-embed" href="https://resolume.com/training/1/2/11" target="_blank" rel="noopener">
+        <img src="../screenshots/resolume-layering.png" alt="Resolume's composition grid with a clip duplicated across layers and columns" />
+        <span class="play-badge">
+          <span class="play-icon">▶</span>
+          Watch: Layer Structure — resolume.com/training
+        </span>
+      </a>
     </section>
 
     <section class="topic" id="slicing">
@@ -115,15 +105,14 @@
       <p>
         It can also resize: a 720×1080 source can be stretched or fit to 1920×1080, at the
         cost of some resolution. See <a href="advanced.html#slicing">Chapter ③</a> for
-        advanced output patching and using ProPresenter's Live Feed as an input.
+        advanced output patching and using ProPresenter's Live Feed as an input. Resolume's own
+        <a href="https://resolume.com/support/en/input-selection" target="_blank" rel="noopener">Input Selection guide</a>
+        covers this in more depth.
       </p>
 
-      <figure class="media-placeholder">
-        <div class="frame">
-          <span class="icon">🎞</span>
-          <strong>GIF needed</strong>
-          <span class="desc">Cropping a camera feed to show only the left half, then resizing a 720×1080 source to fill 1920×1080</span>
-        </div>
+      <figure class="media-shot">
+        <img src="../screenshots/resolume-input.png" alt="Resolume's Input Selection and Output Transformation panel cropping and warping a source" />
+        <figcaption>Input Selection lets you crop a source down; Output Transformation reshapes where it lands.</figcaption>
       </figure>
     </section>
 
