@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text x='0' y='13' font-size='14'>%F0%9F%8E%9B%EF%B8%8F</text></svg>" />
 <title>② How is Resolume? — Resolume Training</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -19,8 +20,15 @@
     <li><a href="../index.html">Cover</a></li>
     <li><a href="what-is-resolume.html">① What is Resolume?</a></li>
     <li><a href="how-is-resolume.html" class="active">② How is Resolume?</a></li>
-    <li><a href="advanced.html">③ Advanced</a></li>
+    <li><a href="advanced.html">③ Resources</a></li>
   </ul>
+  <div class="advanced-toggle">
+    <label class="switch">
+      <input type="checkbox" id="advanced-mode" />
+      <span class="switch-track"><span class="switch-thumb"></span></span>
+    </label>
+    <span class="switch-label">Advanced</span>
+  </div>
 </header>
 
 <main class="chapter-layout">
@@ -28,6 +36,7 @@
     <div class="toc-label">In this chapter</div>
     <ul>
       <li><a href="#propresenter-bridge">From ProPresenter</a></li>
+      <li><a href="#sdi-vs-ndi">SDI vs NDI</a></li>
       <li><a href="#layering">Layering</a></li>
       <li><a href="#slicing">Slicing</a></li>
       <li><a href="#customizations">Customizations</a></li>
@@ -41,8 +50,8 @@
     <h1>How is Resolume?</h1>
     <p class="chapter-intro">
       The core workflow — inputs, layers, and the everyday adjustments you'll make live.
-      For the deeper hardware and patching details, see
-      <a href="advanced.html">Chapter ③ — Advanced</a>.
+      Orange callouts mark places where there's more going on under the hood; flip the
+      <strong>Advanced</strong> switch above to expand them all, or open them one at a time.
     </p>
 
     <section class="topic" id="propresenter-bridge">
@@ -71,6 +80,42 @@
           <img src="../screenshots/resolume-ndi.jpg" alt="Two NDI sources from an Alienware machine appearing as live columns in Resolume" />
           <figcaption>...and those ProPresenter screens arrive as live NDI columns, ready to drop into a composition.</figcaption>
         </figure>
+      </div>
+    </section>
+
+    <section class="topic" id="sdi-vs-ndi">
+      <h2>SDI vs NDI</h2>
+      <p>
+        Both are ways of getting video signal from one place to another. Which one a room
+        uses depends on what that room is set up for.
+      </p>
+
+      <div class="callout advanced">
+        <button class="callout-toggle" type="button">
+          SDI vs NDI — the hardware reality
+          <span class="chevron">▾</span>
+        </button>
+        <div class="callout-body">
+          <p>
+            <strong>SDI</strong> is a physical connection — a cable. It's stable and
+            predictable, but it requires hardware (cabling, converters, a proper run between
+            rooms). The main sanctuary uses SDI for this reliability.
+          </p>
+          <p>
+            <strong>NDI</strong> is virtual — it travels over the network instead of a
+            dedicated cable. That makes it flexible (no new cable run needed, easy to add a
+            source), but it can be unstable if the network isn't set up cleanly for it.
+            Sanctuary 2 uses NDI for this flexibility.
+          </p>
+
+          <figure class="media-placeholder">
+            <div class="frame">
+              <span class="icon">🖼</span>
+              <strong>Screenshot/diagram needed</strong>
+              <span class="desc">Signal path comparison: SDI cable run to the main sanctuary booth vs NDI over the network to Sanctuary 2</span>
+            </div>
+          </figure>
+        </div>
       </div>
     </section>
 
@@ -104,16 +149,67 @@
       </p>
       <p>
         It can also resize: a 720×1080 source can be stretched or fit to 1920×1080, at the
-        cost of some resolution. See <a href="advanced.html#slicing">Chapter ③</a> for
-        advanced output patching and using ProPresenter's Live Feed as an input. Resolume's own
+        cost of some resolution. Resolume's own
         <a href="https://resolume.com/support/en/input-selection" target="_blank" rel="noopener">Input Selection guide</a>
         covers this in more depth.
       </p>
 
       <figure class="media-shot">
-        <img src="../screenshots/resolume-input.png" alt="Resolume's Input Selection and Output Transformation panel cropping and warping a source" />
-        <figcaption>Input Selection lets you crop a source down; Output Transformation reshapes where it lands.</figcaption>
+        <img src="../screenshots/resolume-transform.png" alt="Resolume's Slice Transform panel with Blend Mode, Opacity, Main Scaling, and per-slice scaling for Right, Left, and Bottom" />
+        <figcaption>Each slice gets its own opacity and scaling mode (Fill, Fit, Stretch, Mask).</figcaption>
       </figure>
+
+      <div class="callout advanced">
+        <button class="callout-toggle" type="button">
+          Output + Patching — advanced output &amp; scaling
+          <span class="chevron">▾</span>
+        </button>
+        <div class="callout-body">
+          <p>
+            Beyond simple resizing, Resolume's Advanced Output screen lets you patch and
+            scale your composition onto specific physical outputs — useful once you're
+            feeding more than one screen or a non-standard resolution.
+          </p>
+
+          <figure class="media-shot">
+            <img src="../screenshots/resolume-input.png" alt="Resolume's Input Selection and Output Transformation screen with Screen 1 and Screen 2 listed, each carrying multiple slices" />
+            <figcaption>The Advanced Output screen: Input Selection on the left, Output Transformation warping the result on the right.</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="callout advanced">
+        <button class="callout-toggle" type="button">
+          ProPresenter as an input
+          <span class="chevron">▾</span>
+        </button>
+        <div class="callout-body">
+          <p>
+            ProPresenter's live output (its "Live Feed") is, from Resolume's perspective,
+            just another input — one that can be triggered, layered, and customized exactly
+            like a video clip or camera feed.
+          </p>
+        </div>
+      </div>
+
+      <div class="callout advanced">
+        <button class="callout-toggle" type="button">
+          Slice stacking — multiple slices per screen
+          <span class="chevron">▾</span>
+        </button>
+        <div class="callout-body">
+          <p>
+            A screen isn't limited to one slice either. Think of the composition as a pie: each
+            slice carves out a region to send to a different output, at any size or shape, and
+            you can stack as many slices per screen as you need.
+          </p>
+
+          <figure class="media-shot">
+            <img src="../screenshots/resolume-slicestack.png" alt="Resolume's slice list: Screen 1 with Center Rotated, Horizontal Strip, and Vertical Strip slices; Screen 2 with Triangle and FullScreen slices" />
+            <figcaption>One screen, several slices: Screen 1 carries three, Screen 2 carries two, each its own shape.</figcaption>
+          </figure>
+        </div>
+      </div>
     </section>
 
     <section class="topic" id="customizations">
@@ -125,15 +221,27 @@
         <li><strong>Opacity</strong> — covered above in Layering; more practical detail to come.</li>
         <li><strong>Translation / Rotate</strong> — move and rotate content in frame.</li>
         <li><strong>Playback options</strong> — loop, bounce, hold, etc.</li>
-        <li>...and a long list of other effects beyond this.</li>
+        <li>
+          ...and a long list of other effects beyond this; see the
+          <a href="https://docs.google.com/document/d/1-KGruCitOkI9KBaxROBAxvAhDUB-YLRWu9y0PqsOd-8/preview?tab=t.0#heading=h.7beb8171b096" target="_blank" rel="noopener">full effects glossary</a>
+          for a one-line description of every effect in the library.
+        </li>
       </ul>
 
-      <figure class="media-placeholder">
-        <div class="frame">
-          <span class="icon">🖼</span>
-          <strong>Screenshot needed</strong>
-          <span class="desc">A clip's parameter panel: speed, color, opacity, and transform controls</span>
-        </div>
+      <div class="media-grid">
+        <figure class="media-shot">
+          <img src="../screenshots/resolume-effectslibrary.png" alt="Resolume's Effects panel listing Favorites, Wire, Audio, and Video effect categories" />
+          <figcaption>Effects are organized by category in the Effects panel: Wire, Audio, Video, and your Favorites.</figcaption>
+        </figure>
+        <figure class="media-shot">
+          <img src="../screenshots/resolume-effectsguide.png" alt="Effects glossary document describing what each effect does, e.g. Bendoscope, Blow, Blur, ChromaKey" />
+          <figcaption>...and the glossary above spells out what each one actually does.</figcaption>
+        </figure>
+      </div>
+
+      <figure class="media-shot">
+        <img src="../screenshots/resolume-effects1.png" alt="A clip's Cube Tiles effect parameters with a Presets menu open (Default, Closeup, Complex, Inside Cube, Rotation, etc.)" />
+        <figcaption>Once added, a clip's effect gets its own parameter panel, often with ready-made presets to start from.</figcaption>
       </figure>
     </section>
 
@@ -144,13 +252,26 @@
         menu mid-service — including via <strong>MIDI</strong>, if you want a physical
         controller mapped to specific adjustments.
       </p>
+      <p>
+        The <strong>Shortcuts</strong> panel (bottom-right, next to Files/Compositions/Effects/Sources)
+        lists every keyboard shortcut already assigned — column and layer connects, selects, the
+        composition master, dashboard links, and more — alongside the key combo that triggers it.
+      </p>
 
-      <figure class="media-placeholder">
-        <div class="frame">
-          <span class="icon">🖼</span>
-          <strong>Screenshot needed</strong>
-          <span class="desc">Mapping a MIDI fader to a layer's opacity in Resolume's MIDI/Keystroke setup</span>
-        </div>
+      <figure class="media-shot">
+        <img src="../screenshots/resolume-shortcutmode.jpg" alt="Resolume's Shortcuts panel listing keyboard shortcuts like Composition Columns 4 Connect (shift + $) and Composition Layers 1 Select (1)" />
+        <figcaption>Every assigned keyboard shortcut lives in this panel — pick a target at the bottom (e.g. "This Clip") to scope it.</figcaption>
+      </figure>
+
+      <p>
+        Switch the dropdown to a MIDI device (e.g. an APC40) to see — or build — the same kind
+        of list for a physical controller, mapping pads and faders to layer connects, selects,
+        and dashboard links instead of key presses.
+      </p>
+
+      <figure class="media-shot">
+        <img src="../screenshots/resolume-shortcutlist.jpg" alt="Resolume's Shortcuts panel switched to APC40 MIDI mode, listing MIDI note/CC assignments for layer connects, master, and dashboard links" />
+        <figcaption>The same panel in MIDI mode: each action maps to a note or CC number instead of a keystroke.</figcaption>
       </figure>
     </section>
 
@@ -161,20 +282,18 @@
         playback-friendly format ahead of time keeps things smooth live.
       </p>
       <p>
-        Use <strong>Resolume Alley</strong> (Resolume's own transcoder) to convert clips
-        before they go into a composition — this is the step that avoids lagginess.
+        Use <a href="https://resolume.com/software/alley" target="_blank" rel="noopener"><strong>Resolume Alley</strong></a>
+        (Resolume's own transcoder) to convert clips before they go into a composition —
+        this is the step that avoids lagginess.
       </p>
 
-      <figure class="media-placeholder">
-        <div class="frame">
-          <span class="icon">🎞</span>
-          <strong>GIF needed</strong>
-          <span class="desc">Transcoding a clip in Resolume Alley before importing it into a composition</span>
-        </div>
+      <figure class="media-shot">
+        <img src="../screenshots/resolume-alley.png" alt="Resolume Alley's conversion settings, encoding a clip to DXV3 Normal Quality with Alpha" />
+        <figcaption>Queue a clip in Alley, pick a DXV preset, and convert before it ever hits a composition.</figcaption>
       </figure>
     </section>
 
-    <p><a href="advanced.html">Continue to Chapter ③ — Advanced →</a></p>
+    <p><a href="advanced.html">See Resources →</a></p>
   </div>
 </main>
 

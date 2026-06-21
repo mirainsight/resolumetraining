@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>③ Advanced — Resolume Training</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text x='0' y='13' font-size='14'>%F0%9F%8E%9B%EF%B8%8F</text></svg>" />
+<title>③ Resources — Resolume Training</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -19,147 +20,66 @@
     <li><a href="../index.html">Cover</a></li>
     <li><a href="what-is-resolume.html">① What is Resolume?</a></li>
     <li><a href="how-is-resolume.html">② How is Resolume?</a></li>
-    <li><a href="advanced.html" class="active">③ Advanced</a></li>
+    <li><a href="advanced.html" class="active">③ Resources</a></li>
   </ul>
+  <div class="advanced-toggle">
+    <label class="switch">
+      <input type="checkbox" id="advanced-mode" />
+      <span class="switch-track"><span class="switch-thumb"></span></span>
+    </label>
+    <span class="switch-label">Advanced</span>
+  </div>
 </header>
 
-<main class="chapter-layout">
-  <nav class="toc">
-    <div class="toc-label">In this chapter</div>
-    <ul>
-      <li><a href="#propresenter-bridge">From ProPresenter</a></li>
-      <li><a href="#sdi-vs-ndi">SDI vs NDI</a></li>
-      <li><a href="#layering">Layering</a></li>
-      <li><a href="#slicing">Slicing</a></li>
-      <li><a href="#shortcuts">Shortcuts</a></li>
-      <li><a href="#optimization">Optimization</a></li>
-    </ul>
-  </nav>
-
+<main class="chapter-layout no-sidebar">
   <div>
-    <div class="chapter-eyebrow">Chapter Three</div>
-    <h1>Advanced</h1>
+    <div class="chapter-eyebrow">Reference</div>
+    <h1>Resources</h1>
     <p class="chapter-intro">
-      A second, deeper pass through everything in Chapter ② — for once the basics feel
-      comfortable. The sections below mirror Chapter ② exactly; content is being filled in
-      one topic at a time.
+      Every external link from Chapters ① and ② in one place, for whenever you want to go
+      deeper than this guidebook does.
     </p>
 
-    <section class="topic" id="propresenter-bridge">
-      <h2>From ProPresenter</h2>
-      <div class="placeholder-card">
-        <span class="icon">○</span>
-        <span>A deeper look at handing off ProPresenter media into Resolume — coming soon.</span>
-      </div>
+    <section class="topic" id="watch">
+      <h2>Watch</h2>
+      <ul class="resource-list">
+        <li>
+          <a href="https://resolume.com/training/1/2/11" target="_blank" rel="noopener">Layer Structure</a>
+          <span class="desc">Resolume's own training lesson on render order, Bypass, and Solo.</span>
+        </li>
+        <li>
+          <a href="https://www.youtube.com/watch?v=U-oZYkVO4wM" target="_blank" rel="noopener">Resolume Quick Start Guide | How to VJ</a>
+          <span class="desc">Beginner-friendly walkthrough of Resolume on YouTube.</span>
+        </li>
+      </ul>
     </section>
 
-    <section class="topic" id="sdi-vs-ndi">
-      <h2>SDI vs NDI</h2>
-
-      <div class="callout advanced">
-        <button class="callout-toggle" type="button">
-          SDI vs NDI — the hardware reality
-          <span class="chevron">▾</span>
-        </button>
-        <div class="callout-body">
-          <p>
-            <strong>SDI</strong> is a physical connection — a cable. It's stable and
-            predictable, but it requires hardware (cabling, converters, a proper run between
-            rooms). The main sanctuary uses SDI for this reliability.
-          </p>
-          <p>
-            <strong>NDI</strong> is virtual — it travels over the network instead of a
-            dedicated cable. That makes it flexible (no new cable run needed, easy to add a
-            source), but it can be unstable if the network isn't set up cleanly for it.
-            Sanctuary 2 uses NDI for this flexibility.
-          </p>
-
-          <figure class="media-placeholder">
-            <div class="frame">
-              <span class="icon">🖼</span>
-              <strong>Screenshot/diagram needed</strong>
-              <span class="desc">Signal path comparison: SDI cable run to the main sanctuary booth vs NDI over the network to Sanctuary 2</span>
-            </div>
-          </figure>
-        </div>
-      </div>
+    <section class="topic" id="read">
+      <h2>Read</h2>
+      <ul class="resource-list">
+        <li>
+          <a href="https://resolume.com/support/en/input-selection" target="_blank" rel="noopener">Input Selection</a>
+          <span class="desc">Resolume's support article on cropping, slicing, and stacking inputs.</span>
+        </li>
+        <li>
+          <a href="https://docs.google.com/document/d/1-KGruCitOkI9KBaxROBAxvAhDUB-YLRWu9y0PqsOd-8/preview?tab=t.0#heading=h.7beb8171b096" target="_blank" rel="noopener">Effects glossary</a>
+          <span class="desc">A one-line description of every effect in Resolume's library.</span>
+        </li>
+      </ul>
     </section>
 
-    <section class="topic" id="layering">
-      <h2>Layering</h2>
-      <div class="placeholder-card">
-        <span class="icon">○</span>
-        <span>Advanced composition/group architecture and layer blending — coming soon.</span>
-      </div>
-    </section>
-
-    <section class="topic" id="slicing">
-      <h2>Slicing</h2>
-
-      <div class="callout advanced">
-        <button class="callout-toggle" type="button">
-          Output + Patching — advanced output &amp; scaling
-          <span class="chevron">▾</span>
-        </button>
-        <div class="callout-body">
-          <p>
-            Beyond simple resizing, Resolume's Advanced Output screen lets you patch and
-            scale your composition onto specific physical outputs — useful once you're
-            feeding more than one screen or a non-standard resolution.
-          </p>
-        </div>
-      </div>
-
-      <div class="callout advanced">
-        <button class="callout-toggle" type="button">
-          ProPresenter as an input
-          <span class="chevron">▾</span>
-        </button>
-        <div class="callout-body">
-          <p>
-            ProPresenter's live output (its "Live Feed") is, from Resolume's perspective,
-            just another input — one that can be triggered, layered, and customized exactly
-            like a video clip or camera feed.
-          </p>
-        </div>
-      </div>
-
-      <div class="callout advanced">
-        <button class="callout-toggle" type="button">
-          Slice stacking — multiple slices per screen
-          <span class="chevron">▾</span>
-        </button>
-        <div class="callout-body">
-          <p>
-            A screen isn't limited to one slice either. Think of the composition as a pie: each
-            slice carves out a region to send to a different output, at any size or shape, and
-            you can stack as many slices per screen as you need. See Resolume's
-            <a href="https://resolume.com/support/en/input-selection" target="_blank" rel="noopener">Input Selection guide</a>
-            for the full breakdown.
-          </p>
-
-          <figure class="media-shot">
-            <img src="../screenshots/resolume-slicestack.png" alt="Resolume's slice list: Screen 1 with Center Rotated, Horizontal Strip, and Vertical Strip slices; Screen 2 with Triangle and FullScreen slices" />
-            <figcaption>One screen, several slices: Screen 1 carries three, Screen 2 carries two, each its own shape.</figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <section class="topic" id="shortcuts">
-      <h2>Shortcuts</h2>
-      <div class="placeholder-card">
-        <span class="icon">○</span>
-        <span>Full MIDI mapping walkthrough — coming soon.</span>
-      </div>
-    </section>
-
-    <section class="topic" id="optimization">
-      <h2>Optimization</h2>
-      <div class="placeholder-card">
-        <span class="icon">○</span>
-        <span>Codec/transcoding standards and performance tuning — coming soon.</span>
-      </div>
+    <section class="topic" id="tools">
+      <h2>Tools</h2>
+      <ul class="resource-list">
+        <li>
+          <a href="https://resolume.com/software/alley" target="_blank" rel="noopener">Resolume Alley</a>
+          <span class="desc">Resolume's own transcoder, for converting clips ahead of time to avoid playback lag.</span>
+        </li>
+        <li>
+          <a href="https://www.resolume.com/download/file?file=Resolume_Arena_7_26_2_rev_8882_Installer.exe" target="_blank" rel="noopener">Resolume Arena</a>
+          <span class="desc">Arena, not Avenue: Arena has more functionality (more inputs/outputs, advanced output mapping, and more) than the lighter Avenue edition.</span>
+        </li>
+      </ul>
     </section>
   </div>
 </main>

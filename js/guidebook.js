@@ -3,6 +3,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   initProgressBar();
   initCollapsibleCallouts();
+  initAdvancedMode();
   initScrollspy();
 });
 
@@ -37,6 +38,42 @@ function initCollapsibleCallouts() {
       toggle.setAttribute("aria-expanded", String(isOpen));
       body.style.maxHeight = isOpen ? body.scrollHeight + "px" : "0px";
     });
+  });
+}
+
+// Global "Advanced" switch: expands every advanced callout at once and
+// remembers the choice (via localStorage) as the reader moves between chapters.
+function initAdvancedMode() {
+  const toggle = document.getElementById("advanced-mode");
+  if (!toggle) return;
+
+  const STORAGE_KEY = "resolume-training-advanced-mode";
+
+  const setCallout = (callout, open) => {
+    const btn = callout.querySelector(".callout-toggle");
+    const body = callout.querySelector(".callout-body");
+    if (!btn || !body) return;
+    callout.classList.toggle("open", open);
+    btn.setAttribute("aria-expanded", String(open));
+    body.style.maxHeight = open ? body.scrollHeight + "px" : "0px";
+  };
+
+  const apply = (on) => {
+    document.body.classList.toggle("advanced-mode", on);
+    toggle.checked = on;
+    document.querySelectorAll(".callout.advanced").forEach((c) => setCallout(c, on));
+  };
+
+  apply(localStorage.getItem(STORAGE_KEY) === "true");
+
+  // Images inside callouts can grow the body after load; recompute open heights then.
+  window.addEventListener("load", () => {
+    document.querySelectorAll(".callout.advanced.open").forEach((c) => setCallout(c, true));
+  });
+
+  toggle.addEventListener("change", () => {
+    localStorage.setItem(STORAGE_KEY, String(toggle.checked));
+    apply(toggle.checked);
   });
 }
 
