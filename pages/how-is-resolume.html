@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>② How is Resolume? — Resolume Training</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+
+<div class="progress-bar"></div>
+
+<header class="site-header">
+  <div class="brand"><a href="../index.html">Resolume Training</a></div>
+  <ul class="chapter-nav">
+    <li><a href="../index.html">Cover</a></li>
+    <li><a href="what-is-resolume.html">① What is Resolume?</a></li>
+    <li><a href="how-is-resolume.html" class="active">② How is Resolume?</a></li>
+    <li><a href="advanced.html">③ Advanced</a></li>
+  </ul>
+</header>
+
+<main class="chapter-layout">
+  <nav class="toc">
+    <div class="toc-label">In this chapter</div>
+    <ul>
+      <li><a href="#propresenter-bridge">From ProPresenter</a></li>
+      <li><a href="#sdi-vs-ndi">SDI vs NDI</a></li>
+      <li><a href="#layering">Layering</a></li>
+      <li><a href="#slicing">Slicing</a></li>
+      <li><a href="#customizations">Customizations</a></li>
+      <li><a href="#shortcuts">Shortcuts</a></li>
+      <li><a href="#optimization">Optimization</a></li>
+    </ul>
+  </nav>
+
+  <div>
+    <div class="chapter-eyebrow">Chapter Two</div>
+    <h1>How is Resolume?</h1>
+    <p class="chapter-intro">
+      The core workflow — inputs, layers, and the everyday adjustments you'll make live.
+      Orange callouts mark places where there's more going on under the hood; expand them
+      when you're ready, skip them for now if you're not.
+    </p>
+
+    <section class="topic" id="propresenter-bridge">
+      <h2>From ProPresenter</h2>
+      <p>
+        In ProPresenter, you're used to it being the source of lyrics and the teleprompter —
+        it drives what the congregation and the stage see as text.
+      </p>
+      <p>
+        Resolume doesn't replace that. It handles <strong>media</strong>: slides, the live
+        camera feed, videos, and images. Think of it as the layer that sits around and
+        underneath what ProPresenter already produces.
+      </p>
+    </section>
+
+    <section class="topic" id="sdi-vs-ndi">
+      <h2>SDI vs NDI</h2>
+      <p>
+        Both are ways of getting video signal from one place to another. Which one a room
+        uses depends on what that room is set up for.
+      </p>
+
+      <div class="callout advanced">
+        <button class="callout-toggle" type="button">
+          SDI vs NDI — the hardware reality
+          <span class="chevron">▾</span>
+        </button>
+        <div class="callout-body">
+          <p>
+            <strong>SDI</strong> is a physical connection — a cable. It's stable and
+            predictable, but it requires hardware (cabling, converters, a proper run between
+            rooms). The main sanctuary uses SDI for this reliability.
+          </p>
+          <p>
+            <strong>NDI</strong> is virtual — it travels over the network instead of a
+            dedicated cable. That makes it flexible (no new cable run needed, easy to add a
+            source), but it can be unstable if the network isn't set up cleanly for it.
+            Sanctuary 2 uses NDI for this flexibility.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="topic" id="layering">
+      <h2>Layering</h2>
+      <p>
+        Resolume composites video the way a graphics program composites images: in layers,
+        stacked on top of each other.
+      </p>
+      <ul>
+        <li><strong>Layer (row) vs. column</strong> — layers can stack on top of one another; columns can't.</li>
+        <li><strong>Top to bottom priority</strong> — the layer on top wins, just like layers in any image editor.</li>
+        <li><strong>Composition vs. Group vs. Layer</strong> — a Composition is the whole stack sent to the screen; a Group bundles a few layers together so they can be moved, faded, or triggered as one unit; a Layer is the individual row playing a single clip at a time.</li>
+        <li><strong>Opacity</strong> — how much of a layer shows through the one(s) below it (more in Customizations).</li>
+      </ul>
+    </section>
+
+    <section class="topic" id="slicing">
+      <h2>Slicing</h2>
+      <p>
+        You don't have to use a whole input. Resolume can cut up any portion of it — for
+        example, showing only the left half of a camera feed.
+      </p>
+      <p>
+        It can also resize: a 720×1080 source can be stretched or fit to 1920×1080, at the
+        cost of some resolution.
+      </p>
+
+      <div class="callout advanced">
+        <button class="callout-toggle" type="button">
+          Output + Patching — advanced output &amp; scaling
+          <span class="chevron">▾</span>
+        </button>
+        <div class="callout-body">
+          <p>
+            Beyond simple resizing, Resolume's Advanced Output screen lets you patch and
+            scale your composition onto specific physical outputs — useful once you're
+            feeding more than one screen or a non-standard resolution.
+          </p>
+        </div>
+      </div>
+
+      <div class="callout advanced">
+        <button class="callout-toggle" type="button">
+          ProPresenter as an input
+          <span class="chevron">▾</span>
+        </button>
+        <div class="callout-body">
+          <p>
+            ProPresenter's live output (its "Live Feed") is, from Resolume's perspective,
+            just another input — one that can be triggered, layered, and customized exactly
+            like a video clip or camera feed.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="topic" id="customizations">
+      <h2>Customizations</h2>
+      <p>Once something is in Resolume, you can adjust it live:</p>
+      <ul>
+        <li><strong>Speed</strong> — playback rate of a clip.</li>
+        <li><strong>Color</strong> — grading/correction on the fly.</li>
+        <li><strong>Opacity</strong> — covered above in Layering; more practical detail to come.</li>
+        <li><strong>Translation / Rotate</strong> — move and rotate content in frame.</li>
+        <li><strong>Playback options</strong> — loop, bounce, hold, etc.</li>
+        <li>...and a long list of other effects beyond this.</li>
+      </ul>
+    </section>
+
+    <section class="topic" id="shortcuts">
+      <h2>Shortcuts</h2>
+      <p>
+        Most of the customizations above can be triggered on demand rather than dug for in a
+        menu mid-service — including via <strong>MIDI</strong>, if you want a physical
+        controller mapped to specific adjustments.
+      </p>
+    </section>
+
+    <section class="topic" id="optimization">
+      <h2>Optimization</h2>
+      <p>
+        Heavy video files can strain playback. Transcoding clips into a more
+        playback-friendly format/codec ahead of time keeps things smooth live.
+      </p>
+      <div class="open-question">
+        <strong>Open question:</strong> which codec we standardize on for transcoding
+        (commonly HAP for Resolume) — to be confirmed and filled in here.
+      </div>
+    </section>
+
+    <p><a href="advanced.html">Continue to Chapter ③ — Advanced →</a></p>
+  </div>
+</main>
+
+<footer class="site-footer">Resolume Training Guidebook · for the church AV/tech team</footer>
+
+<script src="../js/guidebook.js"></script>
+</body>
+</html>
